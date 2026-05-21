@@ -1,0 +1,32 @@
+Data from
+
+https://mail.openjdk.org/archives/list/leyden-dev@openjdk.org/message/W2IU3IY3QIZBUSDTRUNQ4M26VUJMW4QP/
+
+
+========================================
+Summary of runs
+========================================
+Configuration                   RSS (MB) Avg [Min, Max]    Startup (ms) Avg [Min, Max]
+----------------------------------------------------------------------------------------
+JDK 25 (AOT=false, COH=false)   153.10 [149, 161]         1019.80 [975, 1067]
+JDK 25 (AOT=false, COH=true)    150.80 [145, 154]         1029.70 [996, 1051]
+JDK 25 (AOT=true,  COH=false)   118.70 [115, 121]          316.70 [302,  344]
+JDK 25 (AOT=true,  COH=true)    119.70 [119, 122]          325.20 [299,  369]
+
+JDK 27 (AOT=false, COH=false)   175.30 [160, 200]         1013.30 [984, 1051]
+JDK 27 (AOT=false, COH=true)    171.10 [156, 206]         1019.80 [997, 1058]
+JDK 27 (AOT=true,  COH=false)   121.80 [115, 123]          333.50 [310,  362]
+JDK 27 (AOT=true,  COH=true)    117.10 [116, 120]          343.30 [316,  397]
+
+?  java-memory-comparison git:(nmt) ? python3 parse_nmt.py
+
+Configuration                       Total  Java Heap      Class Thread   Code      GC      Compiler SharedClass Metaspace   SymbolArena   Chun   Internal
+JDK 25 (AOT=false, COH=false)       160.9      41.3       4.4    2.7      14.5      37.2       0.2      13.7      24.4       6.0         12.4      1.3
+JDK 25 (AOT=false, COH=true)        160.1      40.0       6.6    2.7      14.6      37.2       0.2      14.4      22.1       6.0         11.9      1.3
+JDK 25 (AOT=true,  COH=false)       146.4      35.0       0.5    2.7      10.0      37.0       3.7      44.6       2.5       1.4          6.3      1.3
+JDK 25 (AOT=true,  COH=true)        150.5      35.0       0.7    2.7      10.0      37.0       7.8      47.3       2.4       1.5          3.4      1.3
+
+JDK 27 (AOT=false, COH=false)       203.4      76.3       4.4    2.7      14.5      38.0       6.2      13.8      24.5       6.0         12.8      1.3
+JDK 27 (AOT=false, COH=true)        199.0      73.1       6.6    2.7      14.5      37.9       3.5      13.8      22.2       6.0         14.5      1.3
+JDK 27 (AOT=true,  COH=false)       148.7      38.0       0.6    2.7       9.4      37.1       0.8      45.9       2.5       1.2          8.0      1.3
+JDK 27 (AOT=true,  COH=true)        147.5      38.0       0.7    2.7       9.4      37.1       0.3      45.9       2.4       1.2          7.3      1.3
